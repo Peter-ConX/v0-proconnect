@@ -60,10 +60,10 @@ export default function HomePage() {
               <CardHeader className="flex flex-col items-center pb-2">
                 <Avatar className="w-20 h-20 border-4 border-white shadow-sm">
                   <AvatarImage src="/placeholder.svg?height=80&width=80" alt="@user" />
-                  <AvatarFallback className="bg-navy-light text-white">JP</AvatarFallback>
+                  <AvatarFallback className="bg-sky-700 text-white">OC</AvatarFallback>
                 </Avatar>
-                <h3 className="mt-4 text-lg font-semibold">Jordan Peterson</h3>
-                <p className="text-sm text-gray-500">Product Manager at TechCorp</p>
+                <h3 className="mt-4 text-lg font-semibold">Okafor Chidera</h3>
+                <p className="text-sm text-gray-500">Founder, C.E.O of Proconnect</p>
               </CardHeader>
               <Separator />
               <CardContent className="px-4 py-3">
@@ -99,11 +99,11 @@ export default function HomePage() {
                 <div className="flex gap-3">
                   <Avatar className="w-10 h-10">
                     <AvatarImage src="/placeholder.svg?height=40&width=40" alt="@user" />
-                    <AvatarFallback className="bg-navy-light text-white">JP</AvatarFallback>
+                    <AvatarFallback className="bg-sky-700 text-white">OC</AvatarFallback>
                   </Avatar>
                   <Textarea
                     placeholder="Share your professional insights..."
-                    className="flex-1 resize-none focus-visible:ring-teal-500"
+                    className="flex-1 resize-none focus-visible:ring-sky-500"
                     value={postContent}
                     onChange={(e) => setPostContent(e.target.value)}
                   />
@@ -111,21 +111,21 @@ export default function HomePage() {
               </CardHeader>
               <CardFooter className="flex justify-between">
                 <div className="flex gap-2">
-                  <Button variant="ghost" size="icon" className="text-gray-500 hover:text-teal-500">
+                  <Button variant="ghost" size="icon" className="text-gray-500 hover:text-sky-500">
                     <ImageIcon className="w-5 h-5" />
                     <span className="sr-only">Add Image</span>
                   </Button>
-                  <Button variant="ghost" size="icon" className="text-gray-500 hover:text-teal-500">
+                  <Button variant="ghost" size="icon" className="text-gray-500 hover:text-sky-500">
                     <LinkIcon className="w-5 h-5" />
                     <span className="sr-only">Add Link</span>
                   </Button>
-                  <Button variant="ghost" size="icon" className="text-gray-500 hover:text-teal-500">
+                  <Button variant="ghost" size="icon" className="text-gray-500 hover:text-sky-500">
                     <Smile className="w-5 h-5" />
                     <span className="sr-only">Add Emoji</span>
                   </Button>
                 </div>
                 <Button
-                  className="bg-teal-500 hover:bg-teal-600 text-white"
+                  className="bg-sky-500 hover:bg-sky-600 text-white"
                   onClick={handlePostSubmit}
                   disabled={!postContent.trim()}
                 >
@@ -209,7 +209,7 @@ export default function HomePage() {
                         <div className="flex items-start gap-3">
                           <Avatar className="border">
                             <AvatarImage src={post.author.avatar || "/placeholder.svg"} alt={post.author.name} />
-                            <AvatarFallback className="bg-navy-light text-white">
+                            <AvatarFallback className="bg-sky-700 text-white">
                               {post.author.name.charAt(0)}
                             </AvatarFallback>
                           </Avatar>
@@ -267,7 +267,7 @@ export default function HomePage() {
                               <h3 className="font-medium">{post.link.title}</h3>
                               <a
                                 href={post.link.url}
-                                className="text-sm text-teal-600 dark:text-teal-400 hover:underline mt-2 inline-block"
+                                className="text-sm text-sky-600 dark:text-sky-400 hover:underline mt-2 inline-block"
                               >
                                 Read Article
                               </a>
@@ -282,7 +282,7 @@ export default function HomePage() {
                           variant="ghost"
                           size="sm"
                           className={`gap-1 ${
-                            post.isLiked ? "text-teal-600 dark:text-teal-400" : "text-gray-600 dark:text-gray-300"
+                            post.isLiked ? "text-sky-600 dark:text-sky-400" : "text-gray-600 dark:text-gray-300"
                           }`}
                         >
                           <ThumbsUp className="w-4 h-4" />
@@ -302,7 +302,7 @@ export default function HomePage() {
                           variant="ghost"
                           size="icon"
                           className={`${
-                            post.isBookmarked ? "text-teal-600 dark:text-teal-400" : "text-gray-600 dark:text-gray-300"
+                            post.isBookmarked ? "text-sky-600 dark:text-sky-400" : "text-gray-600 dark:text-gray-300"
                           }`}
                         >
                           <Bookmark className="w-4 h-4" />
@@ -326,7 +326,7 @@ export default function HomePage() {
                       <div className="flex items-start gap-3">
                         <Avatar className="border">
                           <AvatarImage src="/placeholder.svg?height=40&width=40&text=EC" alt="Emma Clark" />
-                          <AvatarFallback className="bg-navy-light text-white">EC</AvatarFallback>
+                          <AvatarFallback className="bg-sky-700 text-white">EC</AvatarFallback>
                         </Avatar>
                         <div>
                           <div className="flex items-center gap-1">
@@ -350,14 +350,14 @@ export default function HomePage() {
                     </p>
                     <div className="mt-3 p-4 border rounded-lg bg-gray-50 dark:bg-gray-800">
                       <div className="flex items-center gap-2 mb-2">
-                        <Calendar className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                        <Calendar className="w-4 h-4 text-sky-600 dark:text-sky-400" />
                         <span className="font-medium">UX Conference 2023</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-gray-500">
                         <Clock className="w-4 h-4" />
                         <span>June 15-17, 2023 • San Francisco, CA</span>
                       </div>
-                      <Button className="mt-3 bg-teal-500 hover:bg-teal-600 text-white">Register Now</Button>
+                      <Button className="mt-3 bg-sky-500 hover:bg-sky-600 text-white">Register Now</Button>
                     </div>
                   </CardContent>
                   <CardFooter className="flex justify-between">
@@ -397,7 +397,7 @@ export default function HomePage() {
                       <div className="flex items-start gap-3">
                         <Avatar className="border">
                           <AvatarImage src="/placeholder.svg?height=40&width=40&text=DK" alt="David Kim" />
-                          <AvatarFallback className="bg-navy-light text-white">DK</AvatarFallback>
+                          <AvatarFallback className="bg-sky-700 text-white">DK</AvatarFallback>
                         </Avatar>
                         <div>
                           <div className="flex items-center gap-1">
@@ -408,7 +408,7 @@ export default function HomePage() {
                           <p className="text-sm text-gray-500">Frontend Developer at TechInnovate</p>
                         </div>
                       </div>
-                      <Badge className="bg-coral-500 text-white flex items-center gap-1">
+                      <Badge className="bg-orange-500 text-white flex items-center gap-1">
                         <TrendingUp className="w-3 h-3" />
                         Trending
                       </Badge>
@@ -426,7 +426,7 @@ export default function HomePage() {
                   </CardContent>
                   <CardFooter className="flex justify-between">
                     <div className="flex gap-4">
-                      <Button variant="ghost" size="sm" className="gap-1 text-teal-600 dark:text-teal-400">
+                      <Button variant="ghost" size="sm" className="gap-1 text-sky-600 dark:text-sky-400">
                         <ThumbsUp className="w-4 h-4" />
                         <span>432</span>
                       </Button>
@@ -489,7 +489,7 @@ export default function HomePage() {
                   ].map((topic, index) => (
                     <div key={index} className="flex items-center justify-between">
                       <div>
-                        <p className="font-medium text-teal-600 dark:text-teal-400">{topic.tag}</p>
+                        <p className="font-medium text-sky-600 dark:text-sky-400">{topic.tag}</p>
                         <p className="text-xs text-gray-500">{topic.posts}</p>
                       </div>
                       <Button variant="ghost" size="sm">
@@ -500,7 +500,7 @@ export default function HomePage() {
                 </div>
               </CardContent>
               <CardFooter className="pt-2">
-                <Button variant="ghost" className="w-full text-teal-600 dark:text-teal-400">
+                <Button variant="ghost" className="w-full text-sky-600 dark:text-sky-400">
                   Show More
                 </Button>
               </CardFooter>
@@ -534,14 +534,14 @@ export default function HomePage() {
                       <div className="flex items-center gap-3">
                         <Avatar className="border">
                           <AvatarImage src={person.avatar || "/placeholder.svg"} alt={person.name} />
-                          <AvatarFallback className="bg-navy-light text-white">{person.name.charAt(0)}</AvatarFallback>
+                          <AvatarFallback className="bg-sky-700 text-white">{person.name.charAt(0)}</AvatarFallback>
                         </Avatar>
                         <div>
                           <p className="font-medium">{person.name}</p>
                           <p className="text-xs text-gray-500">{person.role}</p>
                         </div>
                       </div>
-                      <Button size="sm" className="bg-teal-500 hover:bg-teal-600 text-white">
+                      <Button size="sm" className="bg-sky-500 hover:bg-sky-600 text-white">
                         Follow
                       </Button>
                     </div>
@@ -549,7 +549,7 @@ export default function HomePage() {
                 </div>
               </CardContent>
               <CardFooter className="pt-2">
-                <Button variant="ghost" className="w-full text-teal-600 dark:text-teal-400">
+                <Button variant="ghost" className="w-full text-sky-600 dark:text-sky-400">
                   Show More
                 </Button>
               </CardFooter>
