@@ -211,7 +211,7 @@ export default function ProfilePage() {
           </div>
           <div className="px-6 pb-6 relative">
             <Avatar className="absolute -top-16 left-6 w-32 h-32 border-4 border-white dark:border-gray-800 shadow-md">
-              <AvatarImage src="/placeholder.svg?height=128&width=128&text=OC" alt={profileData.name} />
+              <AvatarImage src="/images/profile-picture.jpeg" alt={profileData.name} />
               <AvatarFallback className="bg-sky-700 text-white text-2xl">OC</AvatarFallback>
             </Avatar>
 

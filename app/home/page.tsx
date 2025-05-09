@@ -59,7 +59,7 @@ export default function HomePage() {
             <Card className="border-none shadow-lg sticky top-24">
               <CardHeader className="flex flex-col items-center pb-2">
                 <Avatar className="w-20 h-20 border-4 border-white shadow-sm">
-                  <AvatarImage src="/placeholder.svg?height=80&width=80" alt="@user" />
+                  <AvatarImage src="/images/profile-picture.jpeg" alt="@user" />
                   <AvatarFallback className="bg-sky-700 text-white">OC</AvatarFallback>
                 </Avatar>
                 <h3 className="mt-4 text-lg font-semibold">Okafor Chidera</h3>
@@ -98,7 +98,7 @@ export default function HomePage() {
               <CardHeader className="pb-3">
                 <div className="flex gap-3">
                   <Avatar className="w-10 h-10">
-                    <AvatarImage src="/placeholder.svg?height=40&width=40" alt="@user" />
+                    <AvatarImage src="/images/profile-picture.jpeg" alt="@user" />
                     <AvatarFallback className="bg-sky-700 text-white">OC</AvatarFallback>
                   </Avatar>
                   <Textarea

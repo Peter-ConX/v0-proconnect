@@ -1,9 +1,5 @@
 "use client"
 
-import { Calendar } from "@/components/ui/calendar"
-
-import { TabsContent } from "@/components/ui/tabs"
-
 import type React from "react"
 
 import { useState } from "react"
@@ -13,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Progress } from "@/components/ui/progress"
 import {
@@ -286,19 +281,37 @@ export default function MissionsPage() {
               </div>
             </div>
 
-            <Tabs defaultValue="featured" className="w-full" onValueChange={setActiveTab}>
-              <TabsList className="bg-white/10 backdrop-blur-sm">
-                <TabsTrigger value="featured" className="data-[state=active]:bg-white/20">
-                  Featured Missions
-                </TabsTrigger>
-                <TabsTrigger value="my-missions" className="data-[state=active]:bg-white/20">
-                  My Missions
-                </TabsTrigger>
-                <TabsTrigger value="all" className="data-[state=active]:bg-white/20">
-                  All Missions
-                </TabsTrigger>
-              </TabsList>
-            </Tabs>
+            {/* Custom tab navigation without using shadcn Tabs */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-md p-1 flex">
+              <button
+                onClick={() => setActiveTab("featured")}
+                className={`flex-1 py-2 px-4 rounded-md transition-colors ${
+                  activeTab === "featured"
+                    ? "bg-white/20 text-white"
+                    : "text-white/70 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                Featured Missions
+              </button>
+              <button
+                onClick={() => setActiveTab("my-missions")}
+                className={`flex-1 py-2 px-4 rounded-md transition-colors ${
+                  activeTab === "my-missions"
+                    ? "bg-white/20 text-white"
+                    : "text-white/70 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                My Missions
+              </button>
+              <button
+                onClick={() => setActiveTab("all")}
+                className={`flex-1 py-2 px-4 rounded-md transition-colors ${
+                  activeTab === "all" ? "bg-white/20 text-white" : "text-white/70 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                All Missions
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -359,7 +372,8 @@ export default function MissionsPage() {
             </div>
           </div>
 
-          <TabsContent value="featured" className="mt-0">
+          {/* Main content area - conditionally render based on activeTab */}
+          {activeTab === "featured" && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredMissions
                 .filter((mission) => mission.status === "featured")
@@ -420,9 +434,9 @@ export default function MissionsPage() {
                   </Card>
                 ))}
             </div>
-          </TabsContent>
+          )}
 
-          <TabsContent value="my-missions" className="mt-0">
+          {activeTab === "my-missions" && (
             <div className="space-y-8">
               {/* In Progress Missions */}
               <div>
@@ -686,7 +700,7 @@ export default function MissionsPage() {
                       </CardContent>
                       <CardFooter className="flex justify-between items-center">
                         <div className="flex items-center gap-1 text-gray-500">
-                          <Calendar className="h-4 w-4" />
+                          <Clock className="h-4 w-4" />
                           <span>Completed {mission.completedDate}</span>
                         </div>
                         <Button variant="outline">View Solution</Button>
@@ -696,9 +710,9 @@ export default function MissionsPage() {
                 </div>
               </div>
             </div>
-          </TabsContent>
+          )}
 
-          <TabsContent value="all" className="mt-0">
+          {activeTab === "all" && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredMissions.map((mission) => (
                 <Card key={mission.id} className="border-none shadow-md hover:shadow-lg transition-shadow">
@@ -757,7 +771,7 @@ export default function MissionsPage() {
                 </Card>
               ))}
             </div>
-          </TabsContent>
+          )}
         </div>
       </section>
     </div>

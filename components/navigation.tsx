@@ -57,7 +57,7 @@ export function Navigation() {
           {/* User Menu (Desktop) */}
           <div className="hidden md:flex items-center">
             <Avatar className="h-8 w-8">
-              <AvatarImage src="/placeholder.svg?height=32&width=32" alt="@user" />
+              <AvatarImage src="/images/profile-picture.jpeg" alt="@user" />
               <AvatarFallback className="bg-sky-700 text-white">OC</AvatarFallback>
             </Avatar>
           </div>
